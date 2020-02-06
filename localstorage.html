@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do List</title>
+    <link rel = "stylesheet" type = "text/css" href = "./css/todo.css">
+    <script src = "./script/todolist.js"></script>
+</head>
+<body onload='initialize()'>
+    <div id="header">
+        <h1>My To-Do List</h1>
+    </div>
+    <div>
+        <p>
+        <input id="todoTag" type="text" placeholder="Add a to-do item">
+        <button onclick="saveItem();">Save</button>
+        <button onclick="clearItems();">Clear all items</button>
+        </p>
+        <h1>To-Do Items</h1>
+        <div id="itemList"></div>
+    </div>
+    </body>
+</html>

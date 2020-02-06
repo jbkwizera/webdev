@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>jqfirst</title>
+        <!--
+        <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+    </head>
+    <body>
+        <div data-role="content" class="content">
+            <div data-role="header" class="header">Wages App</div>
+            <div class='row rate-input'>
+                <label for="rate">Rate of Pay in $</label>
+                <output name="rate" id="rate-out">0</output>
+                <input type="range" name="rate" value="0" id="rate" min="0" max="99",
+                       oninput="updateOutput()">
+            </div>
+            <div class='row hours-input'>
+                <label for="hours">Time in hours </label>
+                <output name="hours" id="hours-out">0</output>
+                <input type="range" name="hours" value="0" id="hours" min="0" max="99",
+                       oninput="updateOutput()">
+            </div>
+            <div class='row btn-input'>
+                <label></label>
+                <input type="button" name="submit" value="Submit" id="btn" onclick="compute()">
+            </div><br>
+            <div id='table-wraper'>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>hours</th>
+                        <th>wage</th>
+                    </tr>
+                    <tr>
+                        <td><b>regular</b></td>
+                        <td id='reghrs'>0</td>
+                        <td id='regpay'>0</td>
+                    </tr>
+                    <tr>
+                        <td><b>overtime</b></td>
+                        <td id='ovrhrs'>3</td>
+                        <td id='ovrpay'>4</td>
+                    </tr>
+                    <tr>
+                        <td>total</td>
+                        <td id='tothrs'>0</td>
+                        <td id='totpay'>0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="footer" data-role="footer">footer</div>
+        </div>
+    </body>
+    <style media="screen">
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background: brown;
+        }
+        .content { background: white; }
+
+        .header, .footer {
+            background: brown;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .row {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        label { width: 30%; }
+        input {
+            width: 70%;
+            border: 1px solid lightgrey;
+            border-radius: 2px;
+        }
+        #btn {
+            border: 1px solid lightgrey;
+            height: 20px;
+            font-family: 'Times New Roman';
+        }
+        #table-wraper { display: none; }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        td, th {
+            border: 1px solid lightgrey;
+            padding: 5px;
+        }
+        output {
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            color: white;
+            background: brown;
+            padding: 4px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @media only screen and (max-width: 580px) {
+            .row {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: left;
+            }
+            label { width: 100%; display: none; }
+            input { width: 100%; }
+        }
+    </style>
+    <script type="text/javascript">
+        function compute() {
+            var rate  = document.getElementById('rate').value;
+            var hours = document.getElementById('hours').value;
+
+            var regPay = 0;
+            var overtimePay = 0;
+
+            if (hours > 40) {
+                regPay = 40 * rate;
+                overtimePay = (hours - 40) * rate * 1.5;
+            }
+            else regPay = hours * rate;
+
+            var reghrs = document.getElementById('reghrs');
+            var ovrhrs = document.getElementById('ovrhrs');
+            var regwage= document.getElementById('regwage');
+            var ovrwage= document.getElementById('ovrwage');
+            var total  = document.getElementById('total');
+
+            document.getElementById('reghrs').innerHTML = '' + ((hours > 40)? 40: hours);
+            document.getElementById('regpay').innerHTML = '' + regPay;
+            document.getElementById('ovrhrs').innerHTML = '' + ((hours > 40)? (hours - 40): 0);
+            document.getElementById('ovrpay').innerHTML = '' + overtimePay;
+            document.getElementById('tothrs').innerHTML = hours;
+            document.getElementById('totpay').innerHTML = regPay + overtimePay;
+            var table = document.getElementById('table-wraper');
+            table.style.display = 'block';
+        }
+        function updateOutput() {
+            document.getElementById('hours-out').value = document.getElementById('hours').value;
+            document.getElementById('rate-out').value = document.getElementById('rate').value;
+        }
+    </script>
+</html>

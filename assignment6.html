@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Runner Aide</title>
+        <link rel="stylesheet" href="./css/assign6.css">
+    </head>
+    <body>
+        <h1>Runner Aide</h1>
+        <div class='form-container'>
+            <form class="form-1">
+                <fieldset>
+                    <legend>Calculate pace chart:</legend>
+                    <div class='input-mile'>
+                        <div class='distance-label'>Distance</div>
+                        <input id = "distance" type="number" name="distance" value="0" min="0">
+                        <span class="unit-mile">&ensp;mi</span>
+                    </div>
+                    <div class='input-target-pace'>
+                        <div class='target-pace-label'>Target pace</div>
+                        <input id="target-pace" type="text" name="target-pace" value="0" min="0">
+                        <span class="unit-pace">&ensp;min/min (mm:ss)</span>
+                    </div>
+                    <div class='input-calc-btn'>
+                        <input id="calculate-btn" type="button" name="calculate" value="Calculate" onclick="updateTable();">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id='table-container'>
+            <table style="text-align:right;">
+                <thead>
+                    <tr>
+                        <th><h2 style="margin: 0;">Mile</h2></th>
+                        <th><h2 style="margin: 0;">Time</h2></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </body>
+
+    <script type="text/javascript" src="./script/assign6.js"></script>
+</html>

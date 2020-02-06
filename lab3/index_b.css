@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+}
+body {
+    font-family: 'Bubbler One';
+    margin-bottom: 36px;
+}
+div.content {
+    color: white;
+    background: #595959;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    margin-bottom: 36px;
+}
+div.row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+}
+img {
+    border: 2px dotted black;
+}

@@ -1,0 +1,28 @@
+body {
+    background: #dbe4eb;
+}
+.img-div
+{ text-align: center; }
+
+img {
+    width: 98%;
+    background: #073a8c;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+h2 {
+    font-family: "Architects Daughter", sans-serif;
+    text-align: center;
+    font-size: 60px;
+    color: #073a8c;
+    margin: 0 auto;
+
+}
+.ol-div {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    width: 20%;
+    margin: 0 auto;
+}

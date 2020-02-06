@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Speed Typing</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Exo|Special+Elite&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/assign7.css">
+    </head>
+    <body>
+        <h1 class="title">Texting Tutor</h1>
+        <div class="form-contaner">
+            <form class="form" id="text-form" action="index.html" method="post">
+                <fieldset>
+                    <legend>Specify your texting level:</legend>
+                    <div class="radio-input-group">
+                        <div class="div-beginner">
+                            <input type="radio" id="level-beg" name="radio-item" checked>
+                            <label for="level-beginner">Beginner</label>
+                        </div>
+                        <div class="div-advanced">
+                            <input type="radio" id="level-adv" name="radio-item">
+                            <label for="level-advanced">Advanced</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="start-btn-div">
+                    <input type="button" class="button" id="start-btn" name="start-btn" value="Click this button to start a test">
+                </div>
+                <p class="text-here">The text you will type will appear here:</p>
+                <div class="text-here">text here</div>
+                <p class="type-here">Type your text here:</p>
+                <div class="div-textarea">
+                    <textarea name="name" id="text-form"></textarea>
+                </div>
+                <div class="stop-btn-div">
+                    <input type="button" class="button" id="stop-btn" name="stop-btn" value="Click this you're done typing">
+                </div>
+                <div class="emoji-div">
+                    <i class="fa fa-thumbs-up"   style="font-size:8em;color:#23c265"></i>
+                </div>
+                <p id="result" style="text-align:center;"></p>
+            </form>
+        </div>
+        <script type="text/javascript" src="./script/assign7.js"></script>
+    </body>
+</html>

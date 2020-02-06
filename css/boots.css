@@ -1,0 +1,15 @@
+img {
+    width: 100%;
+    border-radius: 4px;
+}
+.container-fluid img {
+    height: 80px;
+    width: auto;
+}
+.container-fluid {
+    height: 80px;
+    color: green;
+}
+.text-right {
+    padding-right: 20px;
+}

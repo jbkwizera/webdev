@@ -1,0 +1,13 @@
+body {
+    width: 80%;
+    margin-right: 20px;
+    float: right;
+    background: beige;
+}
+img {
+    float: left;
+    height: 200px;
+}
+.name {
+    font-weight: bold;
+}

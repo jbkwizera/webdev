@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Centimeter to Inch Converter</title>
+        <link rel="stylesheet" href="./css/assign5.css">
+    </head>
+    <body onload="bullsEye(); levyCurve();" onresize="bullsEye(); levyCurve();">
+        <h1>Centimeter-Inch Converter</h1>
+        <form class="form-1">
+            <input id="to-convert" type="number" name="in" value="0" min="0">
+            <label for="to-convert" id="label">&ensp;Centimeters</label>
+        </form>
+        <form class="form-2">
+            <fieldset>
+                <legend>Convert to:</legend>
+                <div class="row-radio-group">
+                    <div class='radio-1'>
+                        <input id="to-inches" type="radio" name="radio-item" value="" checked onclick="updateLabel()">
+                        <label for="to-centimeters">&ensp;Inches</label>
+                    </div>
+                    <div class='radio-2'>
+                        <input id="to-centimeters" type="radio" name="radio-item" value="" onclick="updateLabel()">
+                        <label for="to-inches">&ensp;Centimeters</label>
+                    </div>
+                </div>
+            </fieldset>
+            <input type="button" id="btn" value="Convert" onclick="convertIt()">
+        </form>
+        <div id="result"></div>
+        <hr>
+        <h1 class="bulls-eye">Bull's Eye</h1>
+        <form class='form-group'>
+            <div class="row-input">
+                <label for="level">dark&nbsp;</label>
+                <output name="green-saturation" id="green-out">0</output>
+                <input type="range" name="level" value="0" id="green" min="0" max="100",
+                       oninput="updateOutput(); bullsEye();">
+            </div>
+        </form>
+        <div class="canvas-container">
+            <canvas id="canvas-green" width="300px" height="300px"></canvas>
+        </div>
+        <hr>
+        <h1 class="c-curve">Lévy C curve IFS Construction</h1>
+        <form class='form-group'>
+            <div class="row-input">
+                <label for="level">level&nbsp;</label>
+                <output name="level" id="level-out">0</output>
+                <input type="range" name="level" value="0" id="level" min="0" max="20",
+                       oninput="updateOutput(); levyCurve();">
+            </div>
+        </form>
+        <div class='canvas-container'>
+            <canvas id="canvas-curve" width="800" height="1200"></canvas>
+        </div>
+    </body>
+    <!-- run javascript after loading the entire DOM -->
+    <script type="text/javascript" src="./script/assign5.js"></script>
+</html>

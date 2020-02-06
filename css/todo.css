@@ -1,0 +1,38 @@
+p {
+     margin: 0px;
+ }
+
+#welcomeMessage {
+     margin-bottom: 10px;
+     font-weight: bold;
+ }
+
+input[type = "text"] {
+      width: 350px;
+}
+
+input[type = "button"]{
+      width: 100px;
+}
+ 
+/* list item styles */
+span {
+      margin-left: 10px;
+      display: inline-block;
+      width: 350px;
+}
+li {
+     list-style-type: none;
+     width: 500px;
+}
+li:first-child {
+      border-top: 1px solid grey;
+}
+li:nth-child(even) {
+      background-color: lightyellow;
+       border-bottom: 1px solid grey;
+ }
+li:nth-child(odd) {
+      background-color: lightblue;
+       border-bottom: 1px solid grey;
+ }

@@ -1,0 +1,10 @@
+.row {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+
+}
+.col-sm-3 { width: 32%; margin-right: 1%; }
+img { width: 100%; height: auto; }
